@@ -12,15 +12,15 @@ fun task05(): IO<String> = IO{ "05" }
 
 fun main() {
     val task = IO.fx {
-        val one = task01().bind()
+        val one =! task01()
         println(one)
-        val two = task02().bind()
+        val two =! task02()
         println(two)
-        val three = task03().bind()
+        val three =! task03()
         println(three)
-        val four = task04().bind()
+        val four =! task04()
         println(four)
-        val five = task05().bind()
+        val five =! task05()
         println(five)
     }
     task.redeem({ e -> println("failed: $e") }, { _ -> println("success!!") }).unsafeRunSync()
